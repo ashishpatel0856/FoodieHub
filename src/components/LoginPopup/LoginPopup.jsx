@@ -1,8 +1,18 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './LoginPopup.css'
-const LoginPopup = () => {
+import { assets } from '../../assets/frontend_assets/assets'
+const LoginPopup = ({setShowLogin}) => { 
+
+    const [currState, setCurrState] = useState('Sign Up')
   return (
-    <div>LoginPopup</div>
+    <div className='login-popup'>
+        <form className="login-popup-container">
+            <div className="login-popup-title">
+                <h2>{currState}</h2>
+                <img onClick={() =>setShowLogin(false)} src={assets_cross_icon} alt="" />
+            </div>
+        </form>
+    </div>
   )
 }
 
